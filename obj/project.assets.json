@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\matut\\Documents\\Repos\\Alkemy-individual-challenge\\alkemy-individual-challenge\\alkemy-blog-challenge.csproj",
+      "projectUniqueName": "C:\\Users\\matut\\Documents\\Repos\\Alkemy-individual-challenge\\alkemy-blog-challenge.csproj",
       "projectName": "alkemy-blog-challenge",
-      "projectPath": "C:\\Users\\matut\\Documents\\Repos\\Alkemy-individual-challenge\\alkemy-individual-challenge\\alkemy-blog-challenge.csproj",
+      "projectPath": "C:\\Users\\matut\\Documents\\Repos\\Alkemy-individual-challenge\\alkemy-blog-challenge.csproj",
       "packagesPath": "C:\\Users\\matut\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\matut\\Documents\\Repos\\Alkemy-individual-challenge\\alkemy-individual-challenge\\obj\\",
+      "outputPath": "C:\\Users\\matut\\Documents\\Repos\\Alkemy-individual-challenge\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\matut\\AppData\\Roaming\\NuGet\\NuGet.Config",
