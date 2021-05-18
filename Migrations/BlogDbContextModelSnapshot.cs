@@ -32,8 +32,8 @@ namespace alkemy_blog_challenge.Migrations
 
                     b.Property<string>("Contenido")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime2");

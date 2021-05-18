@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "a5cJd9HpId+L7irekXqjLNu/3mEHEbCadjCrLDBxXHPyUVY1RQP27pYqQYpSVewiGPs0L3KFsAhfAnrjFuLLuQ==",
+  "dgSpecHash": "UnQTvK5NncITm1SkbuB54kzJneeGAVYhYhqMwAIHMW78aTpibX+C7fXwV6sdPtZ+5wRe7nQpB726TZFjXbKQDQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\matut\\Documents\\Repos\\Alkemy-individual-challenge\\alkemy-blog-challenge.csproj",
   "expectedPackageFiles": [
@@ -43,11 +43,14 @@
     "C:\\Users\\matut\\.nuget\\packages\\microsoft.identitymodel.tokens\\5.6.0\\microsoft.identitymodel.tokens.5.6.0.nupkg.sha512",
     "C:\\Users\\matut\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\matut\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",
+    "C:\\Users\\matut\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\5.0.2\\microsoft.visualstudio.web.codegeneration.5.0.2.nupkg.sha512",
     "C:\\Users\\matut\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.contracts\\5.0.2\\microsoft.visualstudio.web.codegeneration.contracts.5.0.2.nupkg.sha512",
     "C:\\Users\\matut\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.core\\5.0.2\\microsoft.visualstudio.web.codegeneration.core.5.0.2.nupkg.sha512",
+    "C:\\Users\\matut\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.design\\5.0.2\\microsoft.visualstudio.web.codegeneration.design.5.0.2.nupkg.sha512",
     "C:\\Users\\matut\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.entityframeworkcore\\5.0.2\\microsoft.visualstudio.web.codegeneration.entityframeworkcore.5.0.2.nupkg.sha512",
     "C:\\Users\\matut\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.templating\\5.0.2\\microsoft.visualstudio.web.codegeneration.templating.5.0.2.nupkg.sha512",
     "C:\\Users\\matut\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.utils\\5.0.2\\microsoft.visualstudio.web.codegeneration.utils.5.0.2.nupkg.sha512",
+    "C:\\Users\\matut\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\5.0.2\\microsoft.visualstudio.web.codegenerators.mvc.5.0.2.nupkg.sha512",
     "C:\\Users\\matut\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\matut\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\matut\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
