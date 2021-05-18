@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using alkemy_blog_challenge.Database;
 using alkemy_blog_challenge.Models;
+using Microsoft.AspNetCore.Http;
+using System.IO;
 
 namespace alkemy_blog_challenge.Controllers
 {
@@ -23,6 +25,26 @@ namespace alkemy_blog_challenge.Controllers
         {
             return View(await _context.Post.ToListAsync());
         }
+
+        public ActionResult RetrieveImage(Guid id)
+        {
+            byte[] cover = GetImageFromDataBase(id);
+            if (cover != null)
+            {
+                return File(cover, "image/jpg");
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public byte[] GetImageFromDataBase(Guid Id)
+        {
+            var q = from temp in _context.Post where temp.Id == Id select temp.Imagen;
+            byte[] cover = q.First();
+            return cover;
+        }
+
 
         public async Task<IActionResult> Details(Guid? id)
         {
@@ -50,14 +72,27 @@ namespace alkemy_blog_challenge.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Post post)
         {
+
+            IFormFile file = Request.Form.Files["ImageData"];
             if (ModelState.IsValid)
             {
                 post.Id = Guid.NewGuid();
+                post.FechaCreacion = DateTime.Now;
+                post.Imagen = ConvertToBytes(file);
                 _context.Add(post);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(post);
+        }
+
+
+        public byte[] ConvertToBytes(IFormFile image)
+        {
+            byte[] CoverImageBytes = null;
+            BinaryReader reader = new BinaryReader(image.OpenReadStream());
+            CoverImageBytes = reader.ReadBytes((int)image.Length);
+            return CoverImageBytes;
         }
 
         public async Task<IActionResult> Edit(Guid? id)
