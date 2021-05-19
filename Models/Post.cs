@@ -18,11 +18,12 @@ namespace alkemy_blog_challenge.Models
         public string Titulo { get; set; }
         [AllowHtml]
         [Required(ErrorMessage = "No se puede subir un post vacio.")]
-        [MaxLength(50, ErrorMessage = "El contenido debe no debe exceder 50 caracteres.")]
+        [MaxLength(300, ErrorMessage = "El contenido debe no debe exceder 300 caracteres.")]
         [Display(Name = "Contenido")]
         public string Contenido { get; set; }
 
         [Display(Name = "Imagen")]
+        [Required(ErrorMessage = "Debe seleccionar una imagen.")]
         public byte[] Imagen { get; set; }
 
         [Required(ErrorMessage = "Debes definir una categoria")]

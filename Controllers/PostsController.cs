@@ -121,7 +121,7 @@ namespace alkemy_blog_challenge.Controllers
 
 
             IFormFile file = Request.Form.Files["ImageData"];
-
+            
             if (ModelState.IsValid)
             {
                 try
