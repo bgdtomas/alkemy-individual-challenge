@@ -119,10 +119,14 @@ namespace alkemy_blog_challenge.Controllers
                 return NotFound();
             }
 
+
+            IFormFile file = Request.Form.Files["ImageData"];
+
             if (ModelState.IsValid)
             {
                 try
                 {
+                    post.Imagen = ConvertToBytes(file);
                     _context.Update(post);
                     await _context.SaveChangesAsync();
                 }
