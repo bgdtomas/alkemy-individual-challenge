@@ -23,7 +23,8 @@ namespace alkemy_blog_challenge.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Post.ToListAsync());
+            var posts = _context.Post.Where(p => p.SoftDeleted == false).ToListAsync();
+            return View(await posts);
         }
 
         public ActionResult RetrieveImage(Guid id)
