@@ -31,6 +31,8 @@ namespace alkemy_blog_challenge.Models
         [Display(Name = "Categoria")]
         public string Categoria { get; set; }
 
+        public bool SoftDeleted { get; set; } = false; 
+
         [Required(ErrorMessage = "La fecha es obligatoria")]
         [DataType(DataType.Date)]
         [Display(Name = "Fecha de creacion.")]
