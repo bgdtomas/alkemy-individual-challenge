@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace alkemy_blog_challenge.Models
 {
-    public class Post
+    public class Post : ISoftDelete
     {
         [Key]
         public Guid Id { get; set; }
@@ -23,11 +23,11 @@ namespace alkemy_blog_challenge.Models
         public string Contenido { get; set; }
 
         [Display(Name = "Imagen")]
-        [Required(ErrorMessage = "Debe seleccionar una imagen.")]
         public byte[] Imagen { get; set; }
 
-        [Required(ErrorMessage = "Debes definir una categoria")]
+
         [MaxLength(50, ErrorMessage = "La categoria debe no debe exceder 50 caracteres.")]
+        [Required(ErrorMessage = "Debe seleccionar una categoria.")]
         [Display(Name = "Categoria")]
         public string Categoria { get; set; }
 

@@ -15,5 +15,21 @@ namespace alkemy_blog_challenge.Database
         }
 
         public DbSet<Post> Post { get; set; }
+
+        public override int SaveChanges()
+        {
+            foreach(var entry in ChangeTracker.Entries())
+            {
+                var entity = entry.Entity;
+                if(entry.State== EntityState.Deleted && entity is ISoftDelete)
+                {
+                    entry.State = EntityState.Modified;
+                    entity.GetType().GetProperty("SoftDeleted").SetValue(entity, true);
+                }
+            }
+
+
+            return base.SaveChanges();
+        }
     }
 }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using alkemy_blog_challenge.Database;
 
 namespace alkemy_blog_challenge.Migrations
 {
     [DbContext(typeof(BlogDbContext))]
-    partial class BlogDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210520193555_ImageNotRequired")]
+    partial class ImageNotRequired
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,7 +28,6 @@ namespace alkemy_blog_challenge.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Categoria")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -39,6 +40,7 @@ namespace alkemy_blog_challenge.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<byte[]>("Imagen")
+                        .IsRequired()
                         .HasColumnType("varbinary(max)");
 
                     b.Property<bool>("SoftDeleted")

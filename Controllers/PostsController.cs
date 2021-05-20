@@ -166,11 +166,11 @@ namespace alkemy_blog_challenge.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(Guid id)
+        public IActionResult DeleteConfirmed(Guid id)
         {
-            var post = await _context.Post.FindAsync(id);
+            var post = _context.Post.Find(id);
             _context.Post.Remove(post);
-            await _context.SaveChangesAsync();
+            _context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
 

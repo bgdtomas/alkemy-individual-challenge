@@ -7,5 +7,6 @@ namespace alkemy_blog_challenge.Models
 {
     interface ISoftDelete
     {
+         
     }
 }
