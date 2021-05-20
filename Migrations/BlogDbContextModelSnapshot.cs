@@ -42,9 +42,6 @@ namespace alkemy_blog_challenge.Migrations
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
 
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Titulo")
                         .IsRequired()
                         .HasMaxLength(50)
