@@ -1,5 +1,7 @@
-﻿using System;
+﻿using alkemy_blog_challenge.Models.Helper;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,7 +9,7 @@ using System.Web.Mvc;
 
 namespace alkemy_blog_challenge.Models
 {
-    public class Post
+    public class Post : ISoftDeleted
     {
         [Key]
         public Guid Id { get; set; }
@@ -35,5 +37,8 @@ namespace alkemy_blog_challenge.Models
         [DataType(DataType.Date)]
         [Display(Name = "Fecha de creacion.")]
         public DateTime FechaCreacion { get; set; }
+
+        [DefaultValue(false)]
+        public bool IsDeleted { get; set; }
     }
 }
