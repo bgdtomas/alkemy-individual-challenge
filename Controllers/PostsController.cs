@@ -75,15 +75,17 @@ namespace alkemy_blog_challenge.Controllers
         {
 
             IFormFile file = Request.Form.Files["ImageData"];
-            if (ModelState.IsValid)
-            {
-                post.Id = Guid.NewGuid();
-                post.FechaCreacion = DateTime.Now;
-                post.Imagen = ConvertToBytes(file);
-                _context.Add(post);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
+                if (ModelState.IsValid && file != null)
+                {
+                    post.Id = Guid.NewGuid();
+                    post.FechaCreacion = DateTime.Now;
+                    post.Imagen = ConvertToBytes(file);
+                    _context.Add(post);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+
+            ModelState.AddModelError("Imagen", "Tiene que elegir una image.");
             return View(post);
         }
 
@@ -123,10 +125,11 @@ namespace alkemy_blog_challenge.Controllers
 
             IFormFile file = Request.Form.Files["ImageData"];
             
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && file!=null)
             {
                 try
                 {
+
                     post.Imagen = ConvertToBytes(file);
                     _context.Update(post);
                     await _context.SaveChangesAsync();
@@ -144,6 +147,7 @@ namespace alkemy_blog_challenge.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ModelState.AddModelError("Imagen", "Tiene que elegir una imagen.");
             return View(post);
         }
 
