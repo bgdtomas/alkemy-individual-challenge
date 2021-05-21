@@ -23,7 +23,8 @@ namespace alkemy_blog_challenge.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Post.ToListAsync());
+            var posts = _context.Post.Where(p => p.SoftDeleted == false).ToListAsync();
+            return View(await posts);
         }
 
         public ActionResult RetrieveImage(Guid id)
@@ -74,15 +75,17 @@ namespace alkemy_blog_challenge.Controllers
         {
 
             IFormFile file = Request.Form.Files["ImageData"];
-            if (ModelState.IsValid)
-            {
-                post.Id = Guid.NewGuid();
-                post.FechaCreacion = DateTime.Now;
-                post.Imagen = ConvertToBytes(file);
-                _context.Add(post);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
+                if (ModelState.IsValid && file != null)
+                {
+                    post.Id = Guid.NewGuid();
+                    post.FechaCreacion = DateTime.Now;
+                    post.Imagen = ConvertToBytes(file);
+                    _context.Add(post);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+
+            ModelState.AddModelError("Imagen", "Tiene que elegir una image.");
             return View(post);
         }
 
@@ -122,10 +125,11 @@ namespace alkemy_blog_challenge.Controllers
 
             IFormFile file = Request.Form.Files["ImageData"];
             
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && file!=null)
             {
                 try
                 {
+
                     post.Imagen = ConvertToBytes(file);
                     _context.Update(post);
                     await _context.SaveChangesAsync();
@@ -143,6 +147,7 @@ namespace alkemy_blog_challenge.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ModelState.AddModelError("Imagen", "Tiene que elegir una imagen.");
             return View(post);
         }
 
@@ -165,11 +170,11 @@ namespace alkemy_blog_challenge.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(Guid id)
+        public IActionResult DeleteConfirmed(Guid id)
         {
-            var post = await _context.Post.FindAsync(id);
+            var post = _context.Post.Find(id);
             _context.Post.Remove(post);
-            await _context.SaveChangesAsync();
+            _context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
 
