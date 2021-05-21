@@ -23,7 +23,7 @@ namespace alkemy_blog_challenge.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var posts = _context.Post.Where(p => p.SoftDeleted == false).ToListAsync();
+            var posts = _context.Post.Where(p => p.SoftDeleted == false).OrderByDescending(p => p.FechaCreacion).ToListAsync();
             return View(await posts);
         }
 
