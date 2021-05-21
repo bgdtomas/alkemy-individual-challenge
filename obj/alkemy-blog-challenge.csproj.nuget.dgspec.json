@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\matut\\Documents\\Repos\\Alkemy-individual-challenge\\alkemy-individual-challenge\\alkemy-blog-challenge.csproj": {}
+    "C:\\Users\\matut\\Documents\\Repos\\Alkemy-individual-challenge\\alkemy-blog-challenge.csproj": {}
   },
   "projects": {
-    "C:\\Users\\matut\\Documents\\Repos\\Alkemy-individual-challenge\\alkemy-individual-challenge\\alkemy-blog-challenge.csproj": {
+    "C:\\Users\\matut\\Documents\\Repos\\Alkemy-individual-challenge\\alkemy-blog-challenge.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\matut\\Documents\\Repos\\Alkemy-individual-challenge\\alkemy-individual-challenge\\alkemy-blog-challenge.csproj",
+        "projectUniqueName": "C:\\Users\\matut\\Documents\\Repos\\Alkemy-individual-challenge\\alkemy-blog-challenge.csproj",
         "projectName": "alkemy-blog-challenge",
-        "projectPath": "C:\\Users\\matut\\Documents\\Repos\\Alkemy-individual-challenge\\alkemy-individual-challenge\\alkemy-blog-challenge.csproj",
+        "projectPath": "C:\\Users\\matut\\Documents\\Repos\\Alkemy-individual-challenge\\alkemy-blog-challenge.csproj",
         "packagesPath": "C:\\Users\\matut\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\matut\\Documents\\Repos\\Alkemy-individual-challenge\\alkemy-individual-challenge\\obj\\",
+        "outputPath": "C:\\Users\\matut\\Documents\\Repos\\Alkemy-individual-challenge\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\matut\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {}
           }
         },
@@ -37,8 +37,36 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNet.Mvc": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
