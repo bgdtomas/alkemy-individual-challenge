@@ -4,32 +4,14 @@
     ViewData["Title"] = "Index";
 }
 
-<h1 class="text-center">Posts</h1>
+<h1 class="text-center">Alkemy Blog</h1>
 
 <p class="text-right">
-    <a asp-action="Create">Crear nuevo post</a>
+    <a asp-action="Create">Create new post</a>
 </p>
 <table class="table">
-    @*<colgroup>
-        <col span="1" style="width: 15%;">
-        <col span="1" style="width: 70%;">
-        <col span="1" style="width: 15%;">
-    </colgroup>*@
     @foreach (var item in Model)
     {
-        @*<thead>
-            <tr>
-                <th>
-                    @Html.DisplayFor(modelItem => item.Titulo)
-                </th>
-                <th class="text-left">
-                    @Html.DisplayFor(modelItem => item.Categoria)
-                </th>
-                <th class="text-muted">
-                    @Html.DisplayFor(modelItem => item.FechaCreacion)
-                </th>
-            </tr>
-        </thead>*@
         <tbody>
             <tr>
                 <th>
